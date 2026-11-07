@@ -1,0 +1,70 @@
+# Java Compiled Files
+*.class
+bin/
+out/
+target/
+
+# Java Archives
+*.jar
+*.war
+*.ear
+
+# IDE Configurations
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# NetBeans
+/nbproject/private/
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+.nb-gradle/
+
+# Generated Documentation
+/docs/
+
+# SQLite Database Files
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Operating System Files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs and Temporary Files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Environment and Local Configuration
+.env
+.env.*
+!.env.example
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
