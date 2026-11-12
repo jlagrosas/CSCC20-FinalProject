@@ -190,6 +190,43 @@ public abstract class Person {
     }
 
 
+    /*********
+     * Getters 
+     *********/
+    
+    public String getFirstName() { return this.firstName; }
+    public String getLastName() { return this.lastName; }
+    public String getMiddleName() { return this.middleName; }
+    public String getSuffix() { return this.suffix; }
+    public String getPrefix() { return this.prefix; }
+    public String getSex() { return this.sex; }
+    public String getCivilStatus() { return this.civilStatus; }
+    public String getEmail() { return this.email; }
+    public String getPrimaryContactNumber() { return this.primaryContactNumber; }
+    public String getSecondaryContactNumber() { return this.secondaryContactNumber; }
+    public String getAddress1() { return this.address1; }
+    public String getAddress2() { return this.address2; }
+    public String getCityMunicipality() { return this.cityMunicipality; }
+
+    /********* 
+     * Setters 
+     *********/
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setMiddleName(String middleName) { this.middleName = middleName; }
+    public void setSuffix(String suffix) { this.suffix = suffix; }
+    public void setPrefix(String prefix) { this.prefix = prefix; }
+    public void setSex(String sex) { this.sex = sex; }
+    public void setCivilStatus(String civilStatus) { this.civilStatus = civilStatus; }
+    public void setEmail(String email) { this.email = email; }
+    public void setPrimaryContactNumber(String primaryContactNumber) { this.primaryContactNumber = primaryContactNumber; }
+    public void setSecondaryContactNumber(String secondaryContactNumber) { this.secondaryContactNumber = secondaryContactNumber; }
+    public void setAddress1(String address1) { this.address1 = address1; }
+    public void setAddress2(String address2) { this.address2 = address2; }
+    public void setCityMunicipality(String cityMunicipality) { this.cityMunicipality = cityMunicipality; }
+    
+
+
     /****************** 
      * Abstract classes 
      ******************/

@@ -2,6 +2,10 @@ package app;
 
 import models.Personnel;
 import java.time.LocalDate;
+import dao.PersonnelDAO;
+import java.sql.SQLException;
+import database.DatabaseConnection;
+import database.DatabaseInitializer;
 
 /**
  * Main entry point.
@@ -17,55 +21,90 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Create a Personnel object
+        PersonnelDAO personnelDAO = new PersonnelDAO();
+
+        // 1. Create a Personnel object
+
         Personnel personnel = new Personnel(
+                "Juan", // firstName
+                "Dela Cruz", // lastName
+                "Santos", // middleName
+                "Jr.", // suffix
+                "Mr.", // prefix
+                "Male", // sex
+                LocalDate.of(1990, 5, 15), // birthDate
+                "Married", // civilStatus
+                "juan.delacruz@example.com", // email
+                "09171234567", // primaryContactNumber
+                "09281234567", // secondaryContactNumber
+                "123 Main Street", // address1
+                "Subdivision XYZ", // address2
+                "Cagayan de Oro", // cityMunicipality
 
-            // Personal Information
-            "Juan",
-            "Dela Cruz",
-            "Santos",
-            "Jr.",
-            "Mr.",
-            "Male",
-            LocalDate.of(1990, 5, 15),
-            "Married",
-            "juan.delacruz@example.com",
-            "09171234567",
-            "09281234567",
-            "123 Main Street",
-            "Subdivision XYZ",
-            "Cagayan de Oro",
+                // Personnel Information
+                "EMP-2026-001", // employeeNumber
+                "IT Officer", // position
+                "Information Technology", // department
+                LocalDate.of(2020, 6, 1), // hireDate
+                "Permanent", // employmentStatus
 
-            // Employment Information
-            "EMP-2026-001",
-            "IT Officer",
-            "Information Technology",
-            LocalDate.of(2020, 6, 1),
-            "Permanent",
+                // Government Identification
+                "12-3456789-0", // sssNumber
+                "123-456-789", // tinNumber
+                "12-345678901-2", // philHealthNumber
+                "1234-5678-9012", // pagibigNumber
+                "N/A", // governmentIdNumber
 
-            // Government Identification
-            "12-3456789-0",
-            "123-456-789-000",
-            "12-345678901-2",
-            "1234-5678-9012",
-            "N01-23-456789",
+                // Emergency Contact
+                "Maria Dela Cruz", // emergencyContactName
+                "Spouse", // emergencyContactRelationship
+                "09181234567", // emergencyContactNumber
 
-            // Emergency Contact
-            "Maria Dela Cruz",
-            "Spouse",
-            "09181234567",
+                // Employee Status
+                true, // isActive
+                null, // lastActiveDate
 
-            // Employee Status
-            true,
-            null,
+                // Additional Notes
+                "Initial personnel record");
 
-            // Additional Notes
-            "Regular employee of the organization."
-        );
+        try {
 
-        // Display personnel information
-        personnel.displayInformation();
+            // 2. Save Personnel into the database
 
+            boolean saved = personnelDAO.insert(personnel);
+
+            if (saved) {
+
+                System.out.println("Personnel successfully saved!");
+                // System.out.println("Generated ID: " + personnel.getId());
+
+                // 3. Retrieve the saved Personnel
+
+                Personnel retrievedPersonnel = personnelDAO.getByEmployeeNumber(personnel.getEmployeeNumber());
+
+                // 4. Display retrieved information
+
+                if (retrievedPersonnel != null) {
+
+                    System.out.println("\nRetrieved Personnel Information:");
+                    System.out.println("--------------------------------");
+
+                    retrievedPersonnel.displayInformation();
+
+                } else {
+                    System.out.println("Personnel record not found.");
+                }
+
+            } else {
+                System.out.println("Failed to save Personnel.");
+
+            }
+
+        } catch (SQLException e) {
+
+            System.err.println("Database operation failed:");
+            e.printStackTrace();
+
+        }
     }
-
 }

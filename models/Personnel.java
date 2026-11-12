@@ -58,6 +58,8 @@ public class Personnel extends Person {
     /** Additional notes associated with the employee */
     private String notes;
     
+    // System generated ID
+    private int id;
    
     /**
      * Creates a Personnel object 
@@ -175,6 +177,51 @@ public class Personnel extends Person {
         // Initialize Employee Notes
         this.notes = notes;
     }
+
+
+    /*********
+     * Getters
+     *********/
+    
+    public int getId() { return this.id; }
+    public String getEmployeeNumber() { return this.employeeNumber; }
+    public String getPosition() { return this.position; }
+    public String getDepartment() { return this.department; }
+    public LocalDate getHireDate() { return this.hireDate; }
+    public String getEmploymentStatus() { return this.employmentStatus; }
+    public String getSssNumber() { return this.sssNumber; }
+    public String getTinNumber() { return this.tinNumber; }
+    public String getPhilHealthNumber() { return this.philHealthNumber; }
+    public String getPagibigNumber() { return this.pagibigNumber; }
+    public String getGovernmentIdNumber() { return this.governmentIdNumber; }
+    public String getEmergencyContactName() { return this.emergencyContactName; }
+    public String getEmergencyContactRelationship() { return this.emergencyContactRelationship; }
+    public String getEmergencyContactNumber() { return this.emergencyContactNumber; }
+    public boolean getIsActive() { return this.isActive; }
+    public LocalDate getLastActiveDate() { return this.lastActiveDate; }
+    public String getNotes() { return this.notes; }
+
+    /*********
+     * Setters
+     *********/ 
+    
+    public void setId(int id) { this.id = id; }
+    public void setEmployeeNumber(String employeeNumber) { this.employeeNumber = employeeNumber; }
+    public void setPosition(String position) { this.position = position; }
+    public void setDepartment(String department) { this.department = department; }
+    public void setHireDate(LocalDate hireDate) { this.hireDate = hireDate; }
+    public void setEmploymentStatus(String employmentStatus) { this.employmentStatus = employmentStatus; }
+    public void setSssNumber(String sssNumber) { this.sssNumber = sssNumber; }
+    public void setTinNumber(String tinNumber) { this.tinNumber = tinNumber; }
+    public void setPhilHealthNumber(String philHealthNumber) { this.philHealthNumber = philHealthNumber; }
+    public void setPagibigNumber(String pagibigNumber) { this.pagibigNumber = pagibigNumber; }
+    public void setGovernmentIdNumber(String governmentIdNumber) { this.governmentIdNumber = governmentIdNumber; }
+    public void setEmergencyContactName(String emergencyContactName) { this.emergencyContactName = emergencyContactName; }
+    public void setEmergencyContactRelationship(String emergencyContactRelationship) { this.emergencyContactRelationship = emergencyContactRelationship; }
+    public void setEmergencyContactNumber(String emergencyContactNumber) { this.emergencyContactNumber = emergencyContactNumber; }
+    public void setIsActive(boolean isActive) { this.isActive = isActive; }
+    public void setLastActiveDate(LocalDate lastActiveDate) { this.lastActiveDate = lastActiveDate; }
+    public void setNotes(String notes) { this.notes = notes; }
 
 
     /**
